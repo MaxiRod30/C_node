@@ -1,0 +1,8 @@
+Instalar: npm install -g nodemon
+Contemplar el agregado de la ruta npm a los archivos PATH de windows
+Ubicacion: Click derecho Equipo -> Propiedades -> Configuracion avanzada del Sistema -> Variables de Entorno
+En la seccion de "Variables de Sistema" -> PATH -> agregar las rutas:
+Ruta: C:\Users\mrodriguez\AppData\Roaming\npm
+Ruta: C:\usr\local
+Reiniciar la PC 
+Pronto para utilizar nodemon!
