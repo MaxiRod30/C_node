@@ -1,0 +1,75 @@
+<!--
+EJERCICIO Nº3
+
+Extender el objeto Array para que permita añadir nuevos elementos al final del array:
+var array1 = [0, 1, 2];
+array1.anadir(3);
+// array1 = [0, 1, 2, 3]
+
+Incluir la opción de controlar si se permiten elementos duplicados o no:
+var array1 = [0, 1, 2];
+array1.anadir(2);
+// array1 = [0, 1, 2, 2]
+array1.anadir(2, false);
+// array1 = [0, 1, 2]
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Curso Web 2.0 - BIOS" />
+    <title>Ejercicio Nº3</title>
+
+    <script type="text/javascript">
+        // Funcion que añade elementos al final del array
+        Array.prototype.anadir = function(elemento) {
+            this[this.length] = elemento;
+        }
+        var array1 = [0, 1, 2];
+        array1.anadir(2);
+        alert(array1);
+
+
+        // Funcion que añade elementos al final del array y
+        // permite evitar añadir elementos duplicados
+        Array.prototype.contiene = function(elemento) {
+            for (var i = 0; i < this.length; i++) {
+                // Es importante utilizar el operador === para comprobar
+                // que los elementos sean exactamente iguales
+                if (this[i] === elemento) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        Array.prototype.anadir = function(elemento, permitirDuplicados) {
+            var permitir = (permitirDuplicados == null) ? true : permitirDuplicados;
+            // Consulta si permitirDuplicados == null / En caso que esta condicion sea verdadera permitir tomara el valor "true" en caso de que sea falta se le asignara permitirDuplicados
+            if (!permitir) {
+                if (!(this.contiene(elemento))) {
+                    this[this.length] = elemento;
+                }
+            } else {
+                this[this.length] = elemento;
+            }
+        }
+        var array2 = [0, 1, 2];
+        array2.anadir(2);
+        alert(array2);
+        var array3 = [0, 1, 2];
+        array3.anadir(2, false);
+        alert(array3);
+    </script>
+</head>
+
+<body>
+
+    <p>Primer EJERCICIO Nº3</p>
+
+</body>
+
+</html>

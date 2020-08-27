@@ -1,0 +1,81 @@
+<!--
+Definir la estructura de un objeto que almacena una factura. Las facturas están formadas por la
+información de la propia empresa (nombre de la empresa, dirección, teléfono, NIF), la información
+del cliente (similar a la de la empresa), una lista de elementos (cada uno de los cuales dispone de
+descripción, precio, cantidad) y otra información básica de la factura (importe total, tipo de iva,
+forma de pago).
+Una vez definidas las propiedades del objeto, añadir un método que calcule el importe total de la
+factura y actualice el valor de la propiedad correspondiente. Por último, añadir otro método que
+muestre por pantalla el importe total de la factura.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Curso Web 2.0 - BIOS" />
+    <title>Ejercicio Nº1</title>
+
+    <script type="text/javascript">
+        // Estructura básica del objeto Factura
+        var factura = {
+            empresa: {
+                nombre: "Nombre de la empresa",
+                direccion: "Dirección de la empresa",
+                telefono: "900900900",
+                nif: ""
+            },
+            cliente: {
+                nombre: "Nombre del cliente",
+                direccion: "Dirección del cliente",
+                telefono: "600600600",
+                nif: "XXXXXXXXX"
+            },
+            elementos: [{
+                descripcion: "Producto 1",
+                cantidad: 0,
+                precio: 0
+            }, {
+                descripcion: "Producto 2",
+                cantidad: 0,
+                precio: 0
+            }, {
+                descripcion: "Producto 3",
+                cantidad: 0,
+                precio: 0
+            }],
+            informacion: {
+                baseImponible: 0,
+                iva: 16,
+                total: 0,
+                formaPago: "contado"
+            }
+        };
+
+        // Métodos de cálculo del total y de visualización del total
+        factura.calculaTotal = function() {
+            for (var i = 0; i < this.elementos.length; i++) {
+                this.informacion.baseImponible += this.elementos[i].cantidad * this.elementos[i].precio;
+            }
+            this.informacion.total = this.informacion.baseImponible * this.informacion.iva;
+        }
+
+        factura.muestraTotal = function() {
+            this.calculaTotal();
+            alert("TOTAL = " + this.informacion.total + " euros");
+        }
+
+        // LLAMADA
+
+        factura.muestraTotal();
+    </script>
+</head>
+
+<body>
+
+    <p>Primer EJERCICIO Nº1</p>
+
+</body>
+
+</html>

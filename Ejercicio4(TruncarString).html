@@ -1,0 +1,60 @@
+<!--
+    
+Extender la clase String para que permita truncar una cadena de texto a un tamaño indicado como
+parámetro:
+var cadena = "hola mundo";
+cadena2 = cadena.truncar(6); // cadena2 = "hola m"
+Modificar la función anterior para que permita definir el texto que indica que la cadena se ha
+truncado:
+var cadena = "hola mundo";
+cadena2 = cadena.truncar(6, '...'); // cadena2 = "hol..." 
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Curso Web 2.0 - BIOS" />
+    <title>Ejercicio Nº4</title>
+
+    <script type="text/javascript">
+        // Funcion que trunca la longitud de una cadena
+        String.prototype.truncar = function(longitud) {
+            longitud = longitud || 10;
+            if (this.length > longitud) {
+                return this.substring(0, longitud);
+            } else {
+                return this;
+            }
+        }
+        var cadena = "hola mundo";
+        alert(cadena.truncar(6));
+
+
+        // Funcion que trunca la longitud de una cadena y añade
+        // un indicador de cadena truncada
+        String.prototype.truncar = function(longitud, indicador) {
+            longitud = longitud || 10;
+            indicador = indicador || '...';
+            if (this.length > longitud) {
+                return this.substring(0, longitud - indicador.length) + indicador;
+            } else {
+                return this;
+            }
+        }
+        var cadena = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.";
+        alert(cadena.truncar(50, '... (sigue)'));
+        alert(cadena.truncar(50));
+    </script>
+</head>
+
+<body>
+
+    <p>Primer EJERCICIO Nº4</p>
+
+</body>
+
+</html>
