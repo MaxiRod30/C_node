@@ -3,6 +3,7 @@ let real = 'Rodriguez Miguez';
 
 //console.log(nombre + ' ' + real);
 //console.log(`${nombre} ${real}`);
+//${ejecuta codigo de javascript}
 
 function getNombre() {
     return `${nombre} ${real}`;

@@ -1,15 +1,15 @@
-console.log('Inicio del programa');
+console.log('Inicio del programa'); // 1
 
-setTimeout(function() {
-    console.log('Primer Timeout');
+setTimeout(()=> {
+    console.log('Primer Timeout');//5
 }, 3000);
 
 setTimeout(function() {
-    console.log('Segundo Timeout');
+    console.log('Segundo Timeout');//3
 }, 0);
 
 setTimeout(function() {
-    console.log('Tercer Timeout');
+    console.log('Tercer Timeout');//4
 }, 0);
 
-console.log('Fin programa');
+console.log('Fin programa');   //2

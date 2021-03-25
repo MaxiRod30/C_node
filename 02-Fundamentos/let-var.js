@@ -1,3 +1,6 @@
+// Var crea variables globales
+// let y const crean variable dentro de scoup
+
 let nombre = 'Maxi';
 
 if (true) {

@@ -1,9 +1,5 @@
-function saludar(nombre) {
-    let mensaje = `hola ${nombre}`;
-
-    return mensaje;
+const saludar = (nombre)=>{
+    return `saludos ${nombre}`; // `Saludos ''+nombre
 }
 
-let saludo = saludar('Maximiliano');
-
-console.log(saludo);
+console.log(saludar('Maximiliano'));
