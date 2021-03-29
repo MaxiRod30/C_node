@@ -1,21 +1,28 @@
 const fs = require('fs');
+const colors = require('colors');
 
-const crearArchivo = async (base = 5) =>{
+
+//*****funcion asincrona (la convierte en promesa)****
+const crearArchivo = async (base = 5 , l = false , h = 10) =>{
   
   try{
       let salida = '';
-      let nombreArchivo = `tabla-${base}.txt`;
+      let consola = '';
+      let nombreArchivo = `./salida/tabla-${base}.txt`;
 
-      console.log('=============');
-      console.log('Tabla del', base);
-      console.log('=============');
-
-      for(let i=1 ;i<11; i++)
+      for(let i=1 ;i<=h; i++)
       {
-        salida +=` ${base} x ${i} = ${base * i}\n`;
+        salida +=` ${base} ${'x'} ${i} ${'='} ${base * i}\n`;
+        consola +=` ${base} ${'x'.green} ${i} ${'='.green} ${base * i}\n`;
+      }
+      if(l)
+      {
+        console.log('============='.green);
+        console.log('Tabla del'.red, base);
+        console.log('============='.green);
+        console.log(consola);
       }
 
-      console.log(salida);
 
       fs.writeFile(nombreArchivo , salida,(err)=> {
         if(err) throw console.log(err);
