@@ -39,3 +39,4 @@ crearArchivo(argv.b,argv.l,argv.h)
   .catch(err => console.log(err));
 
 
+// ejemplo en consola se puede ejecutar node app -b 2 -l ( base=2 y listar)
