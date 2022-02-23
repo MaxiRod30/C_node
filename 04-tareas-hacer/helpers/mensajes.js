@@ -1,3 +1,5 @@
+// primer ejemplo de como crear una lista de menu(no se utiliza este programa)
+// Utilizaremos el programa inquirer debido a que ya contine un blibloteca que resuleve todo estos pasos
 require('colors'); 
 
 //tranformo en promesa
