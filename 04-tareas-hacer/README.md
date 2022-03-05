@@ -18,11 +18,11 @@ node app.js
 
 Visualizacion en consola
 
-
+```
 =============================
   Seleccione una opcion  
 =============================
-```
+
 ? ¿Que desea hacer? (Use arrow keys)
 ❯ 1. Crear una tarea 
   2. Listar tareas 
