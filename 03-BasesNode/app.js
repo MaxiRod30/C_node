@@ -4,7 +4,7 @@ const colors = require("colors/safe");
 const { crearArchivo, listarTabla } = require("./multiplicar/multiplicar");
 
 let comando = argv._[0];
-
+console.log(argv);
 
 switch (comando) {
 
