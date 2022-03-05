@@ -1,7 +1,7 @@
-const argv = require('./config/yargs').argv;
-const colors = require('colors/safe');
+const argv = require("./config/yargs").argv;
+const colors = require("colors/safe");
 
-const { crearArchivo, listarTabla } = require('./multiplicar/multiplicar');
+const { crearArchivo, listarTabla } = require("./multiplicar/multiplicar");
 
 let comando = argv._[0];
 
@@ -20,6 +20,7 @@ switch (comando) {
 
     default:
         console.log('Comando no reconocido');
+        console.log(comando);
 
 }
 
