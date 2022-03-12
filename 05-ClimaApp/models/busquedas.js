@@ -72,9 +72,11 @@ class Busquedas{
   async climaLugar(lat,lon){
     try {
 
-      //Peticion http     api.openweathermap.org/data/2.5/weather?lat=-34.86694&lon=-56.16667&appid=09bface450259ea239a32fba8129b3d0&units=metric&lang=es
+      //Peticion http     api.openweathermap.org/data/2.5/weather?lat=-34.86694&lon=-56.16667&appid&units=metric&lang=es
+    
+      //pedicion HHTP
       const intance = axios.create({
-        baseURL: `https://api.openweathermap.org/data/2.5/weather?`,
+      baseURL: `https://api.openweathermap.org/data/2.5/weather?`,
         params: {...this.paramsWeathermap , lat , lon}
       });
 
@@ -91,6 +93,7 @@ class Busquedas{
       };
 
     } catch (error) {
+      console.log('Error: ')
       console.log(error);
     }
     /* RESPUESTA DE CLIMA
