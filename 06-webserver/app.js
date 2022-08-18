@@ -22,8 +22,8 @@ app.get('/hola-mundo', (req, res) => {
 
 app.get('/', (req, res) => {
   res.render('home.hbs',{
-    nombre: 'Maxi',
-    titulo: 'curso node'
+    nombre: 'Agustin el uno!',
+    titulo: 'Claro PAPA! '
   });// apunta a la carpeta views nombre de archivo home para renderizar esa pagina
   //res.send('hola mundo'); para probar
 });
