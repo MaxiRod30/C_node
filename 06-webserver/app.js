@@ -19,7 +19,7 @@ app.get('/hola-mundo', (req, res) => {
   res.send('Hola mundo de su repectiva ruta')
 });
 */
-
+/*
 app.get('/', (req, res) => {
   res.render('home.hbs',{
     nombre: 'Agustin el uno!',
@@ -27,7 +27,8 @@ app.get('/', (req, res) => {
   });// apunta a la carpeta views nombre de archivo home para renderizar esa pagina
   //res.send('hola mundo'); para probar
 });
-
+*/
+/*
 app.get('/generic.html', (req, res) => {
   res.render('generic.hbs',{
     nombre: 'Maxi',
@@ -35,18 +36,19 @@ app.get('/generic.html', (req, res) => {
   });// apunta a la carpeta views nombre de archivo home para renderizar esa pagina
 
 });
-
+*/
+/*
 app.get('/elements.html', (req, res) => {
   res.render('elements.hbs',{
     nombre: 'Maxi',
     titulo: 'curso node'
   });// apunta a la carpeta views nombre de archivo home para renderizar esa pagina
 });
-
+*/
 // * es comodin para cualquier ruta
 //__dirname todo su path donde esta instalado la aplicacion
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/404.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
