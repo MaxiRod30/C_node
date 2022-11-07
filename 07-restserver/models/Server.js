@@ -1,18 +1,25 @@
 const express = require('express');
 const cors = require('cors');
+const { dbConnetion } = require('../database/config');
+
 class Server {
 
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-
+        this.usuariosPath = '/api/usuarios';
+        
+        //Conectar a la base de datos
+        this.conectarDB();
         //Middlewares
         this.middlewares();
         //Rutas de mi aplicacion
         this.routes();
-        this.usuariosPath = '/api/usuarios';
     }
 
+    async conectarDB(){
+        await dbConnetion();
+    }
     middlewares(){
         // CORS - paquete utilizado para pedir informacion desde afuera
         /*
@@ -24,7 +31,7 @@ class Server {
         //Parseo y lectura del body
         this.app.use(express.json());
         // Servir contenido estatico en carpeta public
-        this.app.use(express.static('public',{extensions:['html']}));
+        this.app.use(express.static('public'));
     }
     routes() {
         
